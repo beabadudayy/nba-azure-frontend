@@ -1008,6 +1008,25 @@ if (
   }
 }
 
+<script>
+fetch("predictions.json")
+  .then(response => response.json())
+  .then(data => {
+
+    for (const team in data) {
+      const percent = Math.round(data[team] * 100);
+      const el = document.getElementById(team);
+
+      if (el) {
+        el.innerText = percent + "% Playoff Chance";
+      }
+    }
+
+  })
+  .catch(err => console.error(err));
+</script>
+
+	
 });</script><script>_satellite["_runScript8"](function(event, target, Promise) {
 try{var clockNodes=document.querySelectorAll('[data-id="nba:draft:tracker:on-the-clock:card"]'),draftNodes=document.querySelectorAll('[data-id="nba:draft:tracker:draft-pick:card"]');if(clockNodes.length>0&&clockNodes.length==draftNodes.length)for(var i=0;i<clockNodes.length;i++)clockNodes[i].setAttribute("href",draftNodes[i].getAttribute("href")||"/draft/2024/draft-board"),clockNodes[i].setAttribute("data-id","nba:draft:tracker:draft-pick:card"),clockNodes[i].setAttribute("data-content",draftNodes[i].getAttribute("data-content")||""),clockNodes[i].setAttribute("data-pos",draftNodes[i].getAttribute("data-pos")||""),clockNodes[i].setAttribute("data-section",draftNodes[i].getAttribute("data-section")||""),clockNodes[i].setAttribute("data-text",draftNodes[i].getAttribute("data-text")||""),clockNodes[i].setAttribute("data-type","card"),clockNodes[i].removeAttribute("data-typ"),draftNodes[i].removeAttribute("data-track")}catch(t){_satellite.logger.error("**********  ERROR  **********"),event.$rule&&event.$rule.name&&_satellite.logger.error("Rule Name: "+event.$rule.name),_satellite.logger.error("Error: "+t),_satellite.logger.error("*****************************")}
 });</script><div id="storyteller-size-helper-svh" style="height: 100svh; position: absolute; display: block; opacity: 0;"></div><div id="storyteller-size-helper-dvh" style="height: 100dvh; position: absolute; display: block; opacity: 0;"></div><script>_satellite["_runScript9"](function(event, target, Promise) {
