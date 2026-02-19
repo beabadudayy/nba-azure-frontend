@@ -1019,6 +1019,28 @@ function intersectionHit(t){t.forEach((function(t){t.isIntersecting&&(_satellite
 });</script><div id="onetrust-consent-sdk" data-nosnippet="true"><div class="onetrust-pc-dark-filter ot-hide ot-fade-in"></div></div><iframe src="./The official site of the NBA for the latest NBA Scores, Stats &amp; News. _ NBA.com_files/aframe.html" width="0" height="0" style="display: none;"></iframe><script>_satellite["_runScript12"](function(event, target, Promise) {
 _satellite.getVar("Cookie Consent: Ads Vendor"),_satellite.getVar("Cookie Consent: Performance General"),_satellite.logger.info("Permissions were evaluated");
 });</script>
- 
-</body>
-</html>
+			<div style="padding:40px; background:white;">
+  <h2>Playoff Predictions</h2>
+
+  <div id="Lakers"></div>
+  <div id="Warriors"></div>
+  <div id="Celtics"></div>
+  <div id="Bucks"></div>
+</div>
+
+<script>
+fetch("predictions.json")
+  .then(response => response.json())
+  .then(data => {
+    for (const team in data) {
+      const percent = Math.round(data[team] * 100);
+      const el = document.getElementById(team);
+
+      if (el) {
+        el.innerText = percent + "% Playoff Chance";
+      }
+    }
+  })
+  .catch(err => console.error(err));
+</script>
+<iframe id="goog_plcm_frame" src="./The official site of the NBA for the latest NBA Scores, Stats &amp; News. _ NBA.com_files/partnerpixels.html" style="display: none;"></iframe></body></html>
